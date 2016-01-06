@@ -1,0 +1,57 @@
+<div class="container">
+
+	<a href="{{ '/' | prepend: site.baseurl }}" title="{{ site.title }}">
+		<img src="{{ '/images/logo.png' | prepend: site.baseurl }}" alt="{{ site.title }}" class="img-responsive" />
+	</a>
+
+	<nav class="navbar navbar-default">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<a class="navbar-brand visible-xs-block" href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a>
+
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				{% for link in site.data.menu_nav %}
+				{% if link.title %}
+
+				{% if link.subs %}
+				<li class="dropdown">
+					<a href="{{ link.href | prepend: site.baseurl }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						{{ link.title }} <span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						{% for sublink in link.subs %}
+						{% if sublink.title %}
+						<li class="{% if sublink.href == page.url %}active{% endif %}">
+							<a href="{{ sublink.href | prepend: site.baseurl }}" class="{{ sublink.class }}">{{ sublink.title }}</a>
+						</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+				</li>
+				{% else %}
+				<li class="{% if link.href == page.url %}active{% endif %}">
+					<a href="{{ link.href | prepend: site.baseurl }}" class="{{ link.class }}">{{ link.title }}</a>
+				</li>
+				{% endif %}
+
+				{% endif %}
+				{% endfor %}
+
+			</ul>
+
+			<!-- <ul class="nav navbar-nav navbar-right"></ul> -->
+
+		</div><!-- /.navbar-collapse -->
+	</nav>
+</div>

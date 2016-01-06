@@ -1,0 +1,17 @@
+---
+layout: page-sidebar
+permalink: /testimonials/
+---
+
+{% for testimonial in site.data.testimonials %}
+
+<blockquote>
+	{{ testimonial.testimony }}
+	<footer>
+		{{ testimonial.name }}
+	</footer>
+</blockquote>
+
+
+
+{% endfor %}

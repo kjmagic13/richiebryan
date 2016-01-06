@@ -1,0 +1,24 @@
+- title: "Home"
+  href: "/"
+
+- title: "Portfolio"
+  href: "/portfolio/"
+  subs:
+    - title: "Web Design"
+      href: "/portfolio/web"
+    - title: "Graphic Design"
+      href: "/portfolio/graphics"
+    - title: "Artwork"
+      href: "/portfolio/art"
+
+- title: "Biography"
+  href: "/biography/"
+
+- title: "Testimonials"
+  href: "/testimonials/"
+
+# - title: "Blog"
+#   href: "/blog/"
+
+- title: "Contact"
+  href: "/contact/"
