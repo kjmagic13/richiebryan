@@ -14,7 +14,7 @@ tagline: Freelance Web and Graphic Design that Illuminates your Brand
 description: Richie Bryan is a professional graphic designer, artist and copywriter. He combines an eye for design with the business logistics of advertising and public relations to help clients develop their image and messaging. Core strengths include creative writing and digital design of print and web graphics.
 
 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/richiebryan" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 
 twitter_username: jekyllrb
