@@ -4,40 +4,37 @@ layout: default
 
 <div class="container">
 
-	<header class="page-header page-header-warning">
-		<h1 class="text-center">
-			{{ page.title }}
-			<br>
-			<small>
-				{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-			</small>
-		</h1>
-	</header>
-
-	<ol class="breadcrumb">
-		<li><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
-		<li><a href="{{ '/blog' | prepend: site.baseurl }}">Blog</a></li>
-		<li class="active">{{ page.title }}</li>
-	</ol>
-
 	<div class="row">
 
 		<article class="col-sm-7 col-md-8">
+
+			<header class="page-header">
+				<h2>
+					{{ page.title }}
+				</h2>
+			</header>
+
+			{{ content }}
+
+			<ol class="breadcrumb">
+				<li><a href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
+				<li><a href="{{ '/portfolio/' | prepend: site.baseurl }}">Portfolio</a></li>
+				<li><a href="{{ '/portfolio/' | prepend: site.baseurl | append: page.categories.first }}">{{ page.categories.first | capitalize }}</a></li>
+				<li class="active">{{ page.title }}</li>
+			</ol>
+
+		</article>
+
+		<aside class="col-sm-5 col-md-4">
 			{% if page.image %}
 			<p>
-				<img class="img-responsive center-block" src="{{ site.baseurl }}/images/{{ page.image }}" alt="{{ page.title }}">
+				<img class="img-responsive center-block" src="{{ page.image }}" alt="{{ page.title }}">
 			</p>
 			{% elsif page.remote_image %}
 			<p>
 				<img class="img-responsive center-block" src="{{ page.remote_image }}" alt="{{ page.title }}">
 			</p>
 			{% endif %}
-
-			{{ content }}
-		</article>
-
-		<aside class="col-sm-5 col-md-4">
-			{% include sidebar.html %}
 		</aside>
 	</div>
 </div>

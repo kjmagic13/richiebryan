@@ -1,0 +1,17 @@
+---
+layout: default
+permalink: /cors/
+---
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.rawgit.com/jpillora/xdomain/0.7.3/dist/xdomain.min.js" slave="http://www.richiebryan.com/cors/proxy.html"></script>
+<script type="text/javascript">
+
+$.get('http://www.richiebryan.com/?json=1').done(function(data) {
+	// console.log( data );
+	$('#corsContent').html( data.posts[0].attachments[0].url );
+});
+
+</script>
+
+<div id="corsContent"></div>
